@@ -1,6 +1,6 @@
 //console.log(process.argv);
 const yargs = require('yargs');
-const { fetchNotes, addNote, editNote } = require('./api');
+const { fetchNotes, addNote, editNote, removeNote } = require('./api');
 
 const titleOption = {
     describe: 'Titre de la note',
@@ -15,6 +15,7 @@ const argv = yargs
         title: titleOption,
         newTitle: { describe: 'Nouveau titre', required: true }
     })
+    .command('remove', 'Supprimer une note', { title: titleOption })
     .help()
     .argv;
 
@@ -34,6 +35,13 @@ if (cmd === 'add') {
         console.log('[+] Note mise à jour');
     } else {
         console.log('[-] Aucune note portant ce titre trouvée');
+    }
+} else if (cmd === 'remove') {
+    let result = removeNote(argv.title);
+    if (result) {
+        console.log('[+] note supprimée');
+    } else {
+        console.log('[-] suppression impossible');
     }
 } else {
     console.log('Commande non reconnue');

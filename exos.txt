@@ -1,4 +1,30 @@
 *** exos ***
-
 1.
-implémenter la fonctionnalité de suppression d'une note
+Ajouter la fonctionnalité de suppression d'une note dans l'application "node-notes"
+
+2.
+Créer une application "multapp" en ligne de commande.
+Cette app devra afficher dans le terminal la table de multiplication
+de la valeur fournie sous forme d'option de ligne de commande.
+La tableau de multiplication ira jusqu'à un seuil maximal (ex: 20)
+
+Exemple d'utilisation:
+node index.js table --value 5 --max 20
+5 x 0 = 0
+5 x 1 = 5
+...
+5 X 20 = 100
+
+En option, afficher "impossible de produire cette table" si la valeur
+fournie n'est pas comprise entre 1 et 100
+
+3. Créer une app "rotapp" en ligne de commande implémentant 
+l'algorithme de cryptographie par rotation de caractère
+
+Exemples d'utilisation:
+
+node rotapp/index.js rot --offset 1 --message "abc"
+affiche: bcd
+
+node rotapp/index.js rot --offset 2 --message "abc"
+affiche: cde

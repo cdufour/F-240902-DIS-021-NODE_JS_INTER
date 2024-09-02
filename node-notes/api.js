@@ -28,11 +28,14 @@ const editNote = (title, newTitle) => {
 }
 
 const removeNote = (title) => {
-    // ToDo
+    let notes = fetchNotes();
+    let newNotes = notes.filter(note => note.title !== title);
+    saveNotes(newNotes); // on-disk update
+    return notes.length !== newNotes.length;
 }
 
 const saveNotes = (notes) => {
     fs.writeFileSync(NOTES_FILE, JSON.stringify(notes));
 }
 
-module.exports = { fetchNotes, addNote, editNote }
+module.exports = { fetchNotes, addNote, editNote, removeNote }
