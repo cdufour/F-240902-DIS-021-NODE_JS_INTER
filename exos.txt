@@ -1,0 +1,4 @@
+*** exos ***
+
+1.
+implémenter la fonctionnalité de suppression d'une note
