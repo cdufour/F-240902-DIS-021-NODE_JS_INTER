@@ -1,7 +1,17 @@
-h2= title
-form(action="/login" method="post")
-    div
-        input(name="email" placeholder="Email")
-    div 
-        input(name="password" type="password" placeholder="Mot de passe")
-    button Se connecter
+extends base
+
+block content
+    h2= title
+    form(action="/login" method="post")
+        div
+            input(name="email" placeholder="Email")
+        div 
+            input(name="password" type="password" placeholder="Mot de passe")
+        button(class="btn btn-primary mt-4") Se connecter
+
+    if active
+        div Je suis un dev actif !
+        h2 Mes élèves
+        ul 
+            each student in students
+                li= student

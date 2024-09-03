@@ -5,6 +5,17 @@ const PORT = 3200;
 // Liaison avec un moteur de rendu (template)
 app.set('view engine', 'pug');
 
+// Middlewares
+app.use(express.urlencoded({ extended: true }));
+
+// Custom middleware
+function custom(req, res, next) {
+    console.log(' -> custom middleware -> ');
+    next();
+}
+
+//app.use(custom);
+
 app.get('/', (req, res) => {
     res.set({
         'Content-Type': 'text/plain',
@@ -13,7 +24,7 @@ app.get('/', (req, res) => {
     res.send('Accueil');
 })
 
-app.get('/notfound', (req, res) => {
+app.get('/notfound', custom, (req, res) => {
     res.status(404).send('Je ne suis pas là :(((');
 })
 
@@ -54,12 +65,25 @@ app.get('/paris', (req, res) => {
 })
 
 app.get('/login', (req, res) => {
-    res.render('login', { title: "Formulaire de login" });
+    res.render('login', { 
+        title: "Formulaire de login",
+        active: true,
+        students: ['Issa', 'Léo', 'Thierry'] 
+    });
 })
 
 app.post('/login', (req, res) => {
-    console.log(req.body);
-    res.send('ok');
+    // console.log(req.body); 
+    //renvoie undefined en l'absence du middleware express.urlencoded
+    
+    const { email, password } = req.body;
+
+    if (!password || password.length < 8) {
+        res.send('Bad input !');
+    }
+
+    res.render('login_submit', { email, password });
+
 })
 
 app.listen(PORT, () => {
