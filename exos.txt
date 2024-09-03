@@ -28,3 +28,6 @@ affiche: bcd
 
 node rotapp/index.js rot --offset 2 --message "abc"
 affiche: cde
+
+4. exo addgame
+Instructions dans le dossier exos/addgame

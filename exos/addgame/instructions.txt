@@ -1,0 +1,15 @@
+*** Exo addgame ***
+
+Créer une application expressjs exposant 2 routes
+
+GET /game/add
+renvoie une page html contenant 
+- une addition de deux opérandes aléatoires (ex: 45 + 36) 
+- un champ de saisie permettant de saisir la réponse
+- un bouton d'envoie pour renvoyer les données au serveur
+
+
+POST /result
+route recevant la réponse du joueur
+elle renvoie une réponse "vrai" ou "faux" au client
+En option, fournir au joueur la bonne réponse en cas d'erreur
