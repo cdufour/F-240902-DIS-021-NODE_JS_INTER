@@ -1,0 +1,11 @@
+{
+  "name": "toto",
+  "version": "0.0.1",
+  "description": "Exo de formation",
+  "main": "index.js",
+  "author": "Christophe D",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "yargs": "17.6.2"
+  }
+}
