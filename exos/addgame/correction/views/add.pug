@@ -1,0 +1,16 @@
+extends base
+
+block style
+  style.
+    span, input { margin: 8px }
+
+block content
+  h3 Calculez
+  form(action="/result" method="post")
+    span= op1
+    span +
+    span= op2
+    input(type="hidden" name="op1" value= op1)
+    input(type="hidden" name="op2" value= op2)
+    input(name="answer", placeholder="Réponse", style="width: 80px")
+    button Envoyer

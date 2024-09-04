@@ -1,0 +1,18 @@
+extends base
+
+block style
+  style.
+    span.correct { color: green }
+
+block content
+  h3 Résultat
+
+  if result
+    div Excellente réponse :-)
+  else
+    div Mauvaise réponse :-(
+    div La bonne réponse était 
+      span.correct= sum
+
+  p
+    a(href="/game/add") Rejouer
