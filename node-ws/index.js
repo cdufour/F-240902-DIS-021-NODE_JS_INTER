@@ -8,8 +8,19 @@ const PORT = 3200;
 const server = http.createServer(app);
 const io = require('socket.io')(server);
 
-io.on('connection', () => {
+io.on('connection', (socket) => {
     console.log('Nouveau client connecté au socket');
+    socket.username = 'User' + Math.ceil(Math.random() * 100);
+
+    socket.on('messageFromClient', (data) => {
+        let message = `${socket.username} => ${data}`;
+        io.emit('messageFromServer', message);
+    })
+
+    socket.on('disconnect', () => {
+        console.log('Client déconnecté');
+    })
+
 })
 
 app.get('/', (req, res) => {

@@ -7,10 +7,32 @@
 </head>
 <body>
     <h1>NODE - WS</h1>
+    <p>Saisir un message</p>
+    <input id="message" type="text" />
+    <button id="sendBtn">Envoyer</button>
+    <ul id="messageList"></ul>
+
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        // start connection
-        const socket = io();
+        
+        const socket = io(); // start connection
+
+        const message       = document.getElementById('message');
+        const sendBtn       = document.getElementById('sendBtn');
+        const messageList   = document.getElementById('messageList');
+
+        sendBtn.addEventListener('click', () => {
+            socket.emit('messageFromClient', message.value);
+            message.value = '';
+        })
+
+        socket.on('messageFromServer', (data) => {
+           let item = document.createElement('li');
+           item.innerText = data;
+           messageList.appendChild(item);
+        })
+    
     </script>
 </body>
 </html>
