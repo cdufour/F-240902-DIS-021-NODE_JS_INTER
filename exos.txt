@@ -2,6 +2,7 @@
 1.
 Ajouter la fonctionnalité de suppression d'une note dans l'application "node-notes"
 
+
 2.
 Créer une application "multapp" en ligne de commande.
 Cette app devra afficher dans le terminal la table de multiplication
@@ -18,6 +19,7 @@ node index.js table --value 5 --max 20
 En option, afficher "impossible de produire cette table" si la valeur
 fournie n'est pas comprise entre 1 et 100
 
+
 3. Créer une app "rotapp" en ligne de commande implémentant 
 l'algorithme de cryptographie par rotation de caractère
 
@@ -29,5 +31,22 @@ affiche: bcd
 node rotapp/index.js rot --offset 2 --message "abc"
 affiche: cde
 
+
 4. exo addgame
 Instructions dans le dossier exos/addgame
+
+
+5. Faites au choix l'un des 2 exos suivants:
+5.1
+En vous basant sur notre projet "node-api", créer une application express
+exposant au moins les routes suivantes:
+- GET /artist
+- POST /artist
+L'application utilisera le fichier chinook.db
+L'accès aux données se fera par l'utilisation du package sequelize (ORM)
+https://www.npmjs.com/package/sequelize
+
+5.2
+Ajouter à l'application node-api:
+- une route permettant d'obtenir la liste des titres des albums en relation avec un artiste spécifique
+- une route permettant de se déconnecter (logout)

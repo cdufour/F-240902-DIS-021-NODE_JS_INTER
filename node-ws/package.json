@@ -1,5 +1,5 @@
 {
-  "name": "api",
+  "name": "ws",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,10 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "bcrypt": "^5.1.1",
     "express": "^4.19.2",
-    "jsonwebtoken": "^9.0.2",
-    "knex": "^3.1.0",
-    "sqlite3": "^5.1.7"
+    "socket.io": "^4.7.5"
   }
 }

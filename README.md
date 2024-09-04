@@ -13,3 +13,4 @@
 - [Node.js Tutorial - 61 - Cluster Module  | youtube | EN](https://youtu.be/SHR-KmfRIsU)
 - [Understanding Streams | Understanding Node.js Core Concepts | youtube | EN](https://youtu.be/e5E8HHEYRNI)
 - [Understanding Buffers | Understanding Node.js Core Concepts | youtube | EN](https://youtu.be/QZIeZM-yXXU)
+- [Connecting NodeJS with MongoDB | Mongoose + Express | youtube | EN | 19 min](https://youtu.be/xrglM8U0Zv8?si=bs0VyVqh_DAnGAjl)
